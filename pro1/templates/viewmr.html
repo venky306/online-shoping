@@ -1,0 +1,21 @@
+<html>
+<body style="background-color: skyblue">
+{% include 'home.html' %}<br>
+<table align="center" border="1">
+    <tr>
+        <th>IDNO</th>
+        <th>NAME</th>
+        <th>CONTACT</th>
+        <th>EMAIL</th>
+    </tr>
+    {% for x in details %}
+        <tr>
+        <th>{{ x.indo }}</th>
+        <th>{{ x.name }}</th>
+        <th>{{ x.contact }}</th>
+        <th>{{ x.email }}</th>
+        </tr>
+    {% endfor %}
+</table>
+</body>
+</html>

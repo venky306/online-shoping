@@ -1,0 +1,23 @@
+<html>
+<body style="background-color: skyblue">
+{% include 'home.html' %}<br>
+<table align="center" border="1">
+    <tr>
+        <th>IDNO</th>
+        <th>NAME</th>
+        <th>CONTACT</th>
+        <th>EMAIL</th>
+        <th>Delete</th>
+    </tr>
+    {% for x in details %}
+        <tr>
+        <td>{{ x.indo }}</td>
+        <td>{{ x.name }}</td>
+        <td>{{ x.contact }}</td>
+        <td>{{ x.email }}</td>
+            <td> <a href="{% url 'deletemerch' %}?merchdel={{ x.indo }}">  Delete  </a> </td>
+        </tr>
+    {% endfor %}
+</table>
+</body>
+</html>

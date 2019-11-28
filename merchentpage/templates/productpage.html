@@ -1,0 +1,40 @@
+<html>
+<body style="background-color: #ffc8e4">
+{%  include 'homepage.html' %}<br>
+<form action="{% url 'saveproduct' %}" method="post">
+    {% csrf_token %}
+<table align="center" >
+    <tr>
+        <th colspan="2" style="text-align: center;font-family: 'MS Gothic';color: #ff1d68">ADD Product</th>
+    </tr>
+    <tr>
+        <td>Product No</td>
+        <td><input type="number" required name="productno"></td>
+    </tr>
+    <tr>
+        <td>Product Name</td>
+        <td><input type="text" required name="productname"></td>
+    </tr>
+    <tr>
+        <td>Product Price</td>
+        <td><input type="number" required name="productprice"></td>
+    </tr>
+    <tr>
+        <td>Product Quantity</td>
+        <td><input type="number" required name="productqty"></td>
+    </tr>
+    <tr>
+        <td><input type="hidden" required name="pmerchentid" value="{{ merchent_id }}" ></td>
+    </tr>
+    <tr>
+        <th colspan="2" style="text-align: center" ><button type="submit" class="btn btn-info">Save</button></th>
+    </tr>
+</table>
+</form>
+
+</body>
+</html>
+
+{% for x in messages %}
+<h2 align="center">{{ x }} </h2>
+{% endfor %}

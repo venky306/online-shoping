@@ -1,0 +1,26 @@
+<html>
+<body>
+{% include 'home.html' %}
+<table align="center" >
+    <tr>
+        <td colspan="2"><h4>Wecome To Merchant Page </h4></td>
+    </tr>
+    <tr>
+        <td>USERNAME</td>
+        <td><input type="email" required name="username"> </td>
+    </tr>
+    <tr>
+        <td>PASSWORD</td>
+        <td><input type="password" required name="password"> </td>
+    </tr>
+    <th>
+        <a href="{% url 'mregister' %}"> CLick here</a><th> Register Merchant </th>
+
+    </th>
+
+</table>
+</body>
+</html><br>
+{% if message %}
+    <h3 align="center">{{ message }}</h3>
+{% endif %}
